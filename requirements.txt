@@ -1,7 +1,6 @@
 Flask
 gunicorn
-Pandas
-Numpy
+pandas
+numpy
 scikit-learn
-pickle
 seaborn
