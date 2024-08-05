@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            height: 100%; /* Full height for the body */
+            margin: 0; /* Remove default margin */
+            display: flex;
+            flex-direction: column; /* Arrange children in a column */
+            align-items: center; /* Center horizontally */
+            background-image: url('static/Screenshot 2024-08-04 201342.png'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .heading-container {
+            display: flex;
+            align-items: center; /* Center items vertically */
+           
+            
+            
+            text-align: center;
+            padding: 10px 0; /* Padding around heading */
+        }
+
+        .heading-container img {
+            height: 50px; /* Adjust size of the logo */
+            margin-right: 20px; /* Space between logo and heading */
+        }
+
+        .heading {
+            margin: 0;
+        }
+
+        .box {
+            background-color: lightgrey;
+            width: 600px;
+            border: 10px solid Brown; /* Brown border color */
+            padding: 50px 30px; /* Padding: 50px top & bottom, 30px left & right */
+            box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+            height: auto; /* Allow height to adjust based on content */
+            overflow-y: auto; /* Add scroll if content exceeds max-height */
+            margin: 20px 0; /* Margin around the box */
+            z-index: 1; /* Ensure box is above the background */
+        }
+
+        .light-line {
+            border-top: 3px solid #15e4d0;    
+            width: 400%;
+            margin: 0 20px;
+        }
+
+        .dish-name {
+            font-style: italic; /* Italicize the dish names */
+        }
+
+        .dish-number {
+            font-weight: bold; /* Make the numbering bold */
+            margin-right: 10px; /* Space between number and name */
+        }
+    </style>
+</head>
+<body>
+    <div class="heading-container">
+        <img src="static\icon-7.png" alt="Logo"> <!-- Replace with your logo image path -->
+        <h1 class="heading">Diet Plan</h1>
+    </div>
+    <div class="light-line"></div>
+    <div class="box">
+        <h1>Recommended Dishes:</h1>
+        {% for rec in recommendations %}
+            <h2><span class="dish-number">{{ loop.index }}.</span> <span class="dish-name">{{ rec.Name }}</span></h2>
+            <p>{{ rec.description }}</p>
+        {% endfor %}
+       
+    </div>
+    <a href='/' class="button">Go back to home page</a>
+</body>
+</html>

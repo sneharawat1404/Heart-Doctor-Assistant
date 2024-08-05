@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            height: 100%; /* Full height for the body */
+            margin: 0; /* Remove default margin */
+            display: flex;
+            flex-direction: column; /* Arrange children in a column */
+            align-items: center; /* Center horizontally */
+            background-image: url('static/Screenshot 2024-08-04 201719.png'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .heading-container {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            text-align: center;
+            padding: 10px 0; /* Padding around heading */
+        }
+
+        .heading-container img {
+            height: 50px; /* Adjust size of the logo */
+            margin-right: 20px; /* Space between logo and heading */
+        }
+
+        .heading {
+            margin: 0;
+        }
+
+        .box {
+            background-color: lightgrey;
+            width: 600px;
+            border: 10px solid Brown; /* Brown border color */
+            padding: 50px 30px; /* Padding: 50px top & bottom, 30px left & right */
+            box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+            height: auto; /* Allow height to adjust based on content */
+            overflow-y: auto; /* Add scroll if content exceeds max-height */
+            margin: 20px 0; /* Margin around the box */
+            z-index: 1; /* Ensure box is above the background */
+        }
+
+        .light-line {
+            border-top: 3px solid #15e4d0;    
+            width: 400%;
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading-container">
+        <img src="static/icon-5.png" alt="Logo"> <!-- Replace with your logo image path -->
+        <h1 class="heading">Heart Report Analysis</h1>
+    </div>
+    <div class="light-line"></div>
+    <div class="box">
+        <h1>Results:</h1>
+        {% if data == 0 %}
+            <h4>The patient seems to have Heart disease.</h4>
+        {% else %}
+            <h4>The patient seems to be Healthy.</h4>
+        {% endif %}   
+    </div>
+    <a href='/' class="button">Go back to home page</a>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('static/Screenshot 2024-08-04 222831.png'); /* Use forward slashes */
+            background-size: cover; /* Ensure the background image covers the entire page */
+            background-position: center; /* Center the background image */
+            color: #Thistle; /* Thistle text color */
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: black;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #59E659; /* Millennial Pink button color */
+            color: white;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #19A519;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Drug Recommendation</h1>
+        <form action="/recommend" method="post">
+            <label for="Description">Enter Disease or symptoms:</label>
+            <input type="text" id="Description" name="Description" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="results">
+            {% if results %}
+                <h2>Recommended Drugs:</h2>
+                <ul>
+                    {% for drug in results %}
+                        <li>{{ drug }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
