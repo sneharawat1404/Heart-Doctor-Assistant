@@ -145,5 +145,4 @@ def k_neighbor(df, feature_df, predictions):
 #     recommendations = [model['df'].iloc[i[0]].Drug_Name for i in distances[:5]]
 #     return recommendations
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
