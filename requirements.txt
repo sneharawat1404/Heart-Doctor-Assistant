@@ -1,6 +1,7 @@
-Flask
-gunicorn
-pandas
-numpy
+Flask==2.0.3
+gunicorn==20.1.0
+pandas==1.4.2
+numpy==1.22.4
 scikit-learn==1.0.2
-seaborn
+seaborn==0.11.2
+setuptools==59.6.0
