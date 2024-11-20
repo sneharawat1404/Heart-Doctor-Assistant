@@ -86,7 +86,7 @@ def predict():
     output = prediction[0]
 
     # Render result page
-    return render_template('Report_result.html', prediction=output)
+    return render_template('Report_result.html', data=output)
 
 @app.route('/diet', methods=['POST'])
 def submit_diet():
